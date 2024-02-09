@@ -28,6 +28,6 @@ public class CameraRotation : MonoBehaviour
 
         newAngleX = Mathf.Clamp(newAngleX, minAngle, maxAngle);
 
-        CameraAxisTransform.localEulerAngles = new Vector3(newAngleX,0, 0);
+        CameraAxisTransform.localEulerAngles = new Vector3(newAngleX, 0, 0);
     }
 }
