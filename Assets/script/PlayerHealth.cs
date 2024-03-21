@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public RectTransform valueRectTransform;
     public GameObject gameplayUI;
     public GameObject gameOverScreen;
+    public Animator animator;
     private float _maxvalue;
 
     private void Start()
@@ -38,11 +39,8 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerController>().enabled = false;
         GetComponent<FireballCaster>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
+        animator.SetTrigger("death");
     }
-
-
-
-
     private void DrawHealthBar()
     {
         valueRectTransform.anchorMax = new Vector2(value / _maxvalue, 1);
